@@ -1,0 +1,24 @@
+class Solution {
+    public String defangIPaddr(String address) {
+        return address.replace(".", "[.]");
+    }
+    
+   
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        
+        
+        String input1 = "1.1.1.1";
+        String output1 = solution.defangIPaddr(input1);
+        System.out.println("Input: " + input1);
+        System.out.println("Output: " + output1);
+        System.out.println("Expected: 1[.]1[.]1[.]1\n");
+        
+        
+        String input2 = "255.100.50.0";
+        String output2 = solution.defangIPaddr(input2);
+        System.out.println("Input: " + input2);
+        System.out.println("Output: " + output2);
+        System.out.println("Expected: 255[.]100[.]50[.]0");
+    }
+}
