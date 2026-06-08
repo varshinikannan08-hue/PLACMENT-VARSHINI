@@ -1,0 +1,34 @@
+class Solution {
+    public String restoreString(String s, int[] indices) {
+        int n = s.length();
+        char[] result = new char[n];
+        
+        
+        for (int i = 0; i < n; i++) {
+            result[indices[i]] = s.charAt(i);
+        }
+        
+        return new String(result);
+    }
+    
+   
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        
+       
+        String s1 = "codeleet";
+        int[] indices1 = {4, 5, 6, 7, 0, 2, 1, 3};
+        String output1 = solution.restoreString(s1, indices1);
+        System.out.println("Input: s = \"" + s1 + "\", indices = [4,5,6,7,0,2,1,3]");
+        System.out.println("Output: \"" + output1 + "\"");
+        System.out.println("Expected: \"leetcode\"\n");
+        
+       
+        String s2 = "abc";
+        int[] indices2 = {0, 1, 2};
+        String output2 = solution.restoreString(s2, indices2);
+        System.out.println("Input: s = \"" + s2 + "\", indices = [0,1,2]");
+        System.out.println("Output: \"" + output2 + "\"");
+        System.out.println("Expected: \"abc\"");
+    }
+}
